@@ -14,6 +14,7 @@ export interface Project {
   desc: string;
   type: string;
   deliveryTime: string;
+  isWebsite?: boolean; // NEW: true = show live iframe preview in card
   metrics?: {
     performance?: string;
     transactions?: string;
@@ -97,16 +98,16 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
-    title: "E-Commerce App for Retail Store",
-    icon: ShoppingCart,
+    title: "Finanacial Platform",
+    icon: Coins,
     tech: ["React Js", "Redux", "Firebase", "Tailwind CSS"],
-    desc: "Full-featured retail shopping app with sleek UI, seamless cart/checkout flow, and secure payment integration. Increased client sales by 35%.",
+    desc: "A financial platform for managing personal finances. Features include expense tracking, budget management, and financial reporting.",
     type: "Client Project",
     deliveryTime: "7 weeks",
+    isWebsite: true,
     testimonial: '"Professional delivery and excellent post-launch support."',
     client: "Retail Business",
-    demoUrl: "https://e-commerce-website-xi-blue.vercel.app/",
-    githubUrl: "https://github.com/Dinesh-78/E-commerce-website",
+    demoUrl: "https://growth-marketing-wheat.vercel.app/",
     caseStudyUrl: "#",
   },
   {
@@ -146,5 +147,18 @@ export const projects: Project[] = [
     client: "Agricultural Startup",
     demoUrl:
       "https://drive.google.com/file/d/15DRWES9buH5xNST5cAvejllGU4TEUE8Z/view?usp=sharing",
+  },
+  {
+    title: "webinar platform",
+    icon: Coins,
+    tech: ["React Js", "Redux", "Firebase", "Tailwind CSS"],
+    desc: "A  webinar platform for Development.",
+    type: "Client Project",
+    deliveryTime: "2 weeks",
+    isWebsite: true,
+    testimonial: '"Professional delivery and excellent post-launch support."',
+    client: "Retail Business",
+    demoUrl: "https://androai.io/",
+    caseStudyUrl: "#",
   },
 ];

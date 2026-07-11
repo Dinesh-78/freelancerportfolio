@@ -105,6 +105,20 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <CardHeader className="pb-4 relative z-10">
+                  {project.isWebsite && (
+                    <div className="mx-6 mb-4 rounded-lg overflow-hidden border border-blue-200/50 dark:border-blue-800/50 relative aspect-video bg-slate-100 dark:bg-slate-900">
+                      <iframe
+                        src={project.demoUrl}
+                        title={`${project.title} live preview`}
+                        loading="lazy"
+                        className="w-full h-full pointer-events-none scale-100 origin-top-left"
+                        sandbox="allow-scripts allow-same-origin"
+                      />
+                      {/* transparent overlay so the iframe isn't interactive inside the card,
+        clicking anywhere still just opens the Live Demo link below */}
+                      <div className="absolute inset-0 bg-transparent" />
+                    </div>
+                  )}
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <motion.div

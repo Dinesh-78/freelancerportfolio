@@ -1,7 +1,7 @@
 import { Code, Database, Cloud, Smartphone } from "lucide-react";
 
 export const heroData = {
-  title: "Software Engineer",
+  title: "Building MVPs for Startups",
   subtitle: "Full Stack Developer • MERN Stack experienced",
   description:
     "Experienced in MERN stack applications with focus on performance, maintainability, and security. Specializing in Next.js, React Native, TypeScript, and cloud infrastructure.",
@@ -23,6 +23,7 @@ export const heroData = {
   ],
   badges: [
     "MERN Stack",
+    "Spring Boot",
     "Next.js & TypeScript",
     "React Native",
     "AWS Certified",

@@ -54,9 +54,9 @@ export const skills: Skill[] = [
     level: "Advanced",
   },
   {
-    name: "NestJS",
+    name: "Spring Boot",
     iconUrl:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
+      "https://d2jdgazzki9vjm.cloudfront.net/springboot/images/spring-boot-tutorial.jpg",
     level: "Advanced",
   },
   {

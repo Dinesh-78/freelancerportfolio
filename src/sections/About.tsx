@@ -39,27 +39,7 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-blue-200/50 dark:border-blue-800/50 shadow-lg">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg">
-                <GraduationCap className="w-6 h-6 text-white" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">
-                  Education
-                </h3>
-                <h4 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-1">
-                  {education.degree} - {education.field}
-                </h4>
-                <p className="text-lg text-slate-700 dark:text-slate-300 mb-2">
-                  {education.university}
-                </p>
-                <div className="flex flex-wrap items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
-                  <span>{education.period}</span>
-                </div>
-              </div>
-            </div>
-          </div>
+         
         </motion.div>
 
         {/* Certifications */}
