@@ -1,13 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
-import { heroData } from "@/constants/hero";
 import {
-  containerVariants,
   itemVariants,
-  hoverScale,
-  tapScale,
 } from "@/constants/animations";
 
 const Herosection: React.FC = () => {

@@ -1,7 +1,6 @@
 import {
   Truck,
   Leaf,
-  ShoppingCart,
   Coins,
   Users,
   LucideIcon,
@@ -14,7 +13,7 @@ export interface Project {
   desc: string;
   type: string;
   deliveryTime: string;
-  isWebsite?: boolean; // NEW: true = show live iframe preview in card
+  isWebsite?: boolean; 
   metrics?: {
     performance?: string;
     transactions?: string;

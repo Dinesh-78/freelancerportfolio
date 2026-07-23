@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { GraduationCap, Award, MoveRight } from "lucide-react";
+import { Award, MoveRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { education, certifications } from "@/constants/about";
+import { certifications } from "@/constants/about";
 import { socialLinks } from "@/constants/navigation";
 import { hoverScale, tapScale } from "@/constants/animations";
 
