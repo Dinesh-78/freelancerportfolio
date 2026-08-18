@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { Award, MoveRight } from "lucide-react";
+import { Award, MoveRight, GraduationCap, Star } from "lucide-react";
 import { motion } from "framer-motion";
-import { certifications } from "@/constants/about";
+import { certifications, education, skillCategories } from "@/constants/about";
 import { socialLinks } from "@/constants/navigation";
 import { hoverScale, tapScale } from "@/constants/animations";
 
@@ -22,7 +22,7 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl  font-black mb-4">
+          <h2 className="text-4xl font-black mb-4">
             About <span className="text-blue-600 dark:text-blue-400">Me</span>
           </h2>
           <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
@@ -39,8 +39,48 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-         
+          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-6 flex items-center gap-3">
+            <GraduationCap className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            Education
+          </h3>
+          <motion.div
+            className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-blue-200/50 dark:border-blue-800/50 shadow-lg"
+            whileHover={{ scale: 1.01, y: -3 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-md">
+                  <GraduationCap className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                    {education.degree}
+                  </h4>
+                  <p className="text-blue-600 dark:text-blue-400 font-semibold">
+                    {education.field}
+                  </p>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                    {education.university}
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row sm:flex-col items-center sm:items-end gap-4 sm:gap-2 pl-16 sm:pl-0">
+                <span className="text-sm text-slate-500 dark:text-slate-400 font-medium">
+                  {education.period}
+                </span>
+                <div className="flex items-center gap-1.5 bg-blue-50 dark:bg-blue-950/50 px-3 py-1.5 rounded-full border border-blue-200 dark:border-blue-800">
+                  <Star className="w-4 h-4 text-blue-600 dark:text-blue-400 fill-current" />
+                  <span className="font-bold text-blue-600 dark:text-blue-400 text-sm">
+                    CGPA {education.cgpa} / 10
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
+
+       
 
         {/* Certifications */}
         <motion.div
@@ -97,6 +137,7 @@ export default function About() {
           <motion.a
             href={socialLinks.whatsapp}
             target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg"
             whileHover={hoverScale}
             whileTap={tapScale}

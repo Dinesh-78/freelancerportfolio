@@ -79,16 +79,9 @@ export const metadata: Metadata = {
     },
   },
   
-  // Verification for search engines
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
-  },
-  
   // Canonical URL
   alternates: {
-    canonical: "https://yourportfolio.com",
+    canonical: "https://dineshportfolio-alpha.vercel.app/",
   },
   
   // App-specific metadata
@@ -133,11 +126,11 @@ export default function RootLayout({
               "name": "Dinesh",
               "jobTitle": "Freelance Web Designer & React Native Developer",
               "description": "Professional freelance web designer and React Native app developer specializing in modern web solutions and mobile applications.",
-              "url": "https://yourportfolio.com",
+              "url": "https://dineshportfolio-alpha.vercel.app/",
               "sameAs": [
-                "https://linkedin.com/in/your-profile",
-                "https://github.com/your-profile",
-                "https://twitter.com/your-profile"
+                "https://www.linkedin.com/in/dinesh-veerapareddy/",
+                "https://github.com/Dinesh-78",
+                "https://x.com/vdinesh2222"
               ],
               "knowsAbout": [
                 "Web Design",
@@ -194,8 +187,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "Dinesh Freelancer Portfolio",
-              "url": "https://yourportfolio.com",
-              "description": "Professional freelance web design and React Native app development services",
+              "url": "https://dineshportfolio-alpha.vercel.app/",
+              "description": "Professional freelance full-stack web development, React Native app development, and cloud engineering services",
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": "https://yourportfolio.com/search?q={search_term_string}",

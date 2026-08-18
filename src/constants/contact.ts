@@ -56,7 +56,7 @@ export const skills: Skill[] = [
   {
     name: "Spring Boot",
     iconUrl:
-      "https://d2jdgazzki9vjm.cloudfront.net/springboot/images/spring-boot-tutorial.jpg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
     level: "Advanced",
   },
   {

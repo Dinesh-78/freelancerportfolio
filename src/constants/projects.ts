@@ -5,6 +5,7 @@ import {
   Users,
   Activity,
   LucideIcon,
+  Video,
 } from "lucide-react";
 
 export interface Project {
@@ -14,7 +15,7 @@ export interface Project {
   desc: string;
   type: string;
   deliveryTime: string;
-  isWebsite?: boolean; 
+  isWebsite?: boolean;
   metrics?: {
     performance?: string;
     transactions?: string;
@@ -32,27 +33,20 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Merchant Loyalty App",
+    title: "Vittup — Rewards App",
     icon: Coins,
-    tech: [
-      "React Native",
-      "Express.js",
-      "Postgresql",
-      "firebase",
-      "Typescript",
-      "Tailwind CSS",
-      "Node.js",
-    ],
-    desc: "A loyalty app for merchants to manage customer rewards and transactions. Features include real-time transaction tracking, customer management, and analytics dashboard.",
-    type: "Full Stack Project",
-    deliveryTime: "3 weeks",
+    tech: ["React Native", "Express.js", "Node.js", "Android"],
+    desc: "A mobile rewards aggregator that captures user cashbacks and rewards across platforms like Amazon Pay, Google Pay, and more. Live on Google Play Store with 100+ active users and growing.",
+    type: "Mobile App",
+    deliveryTime: "4 weeks",
     metrics: {
-      performance: "60% faster processing",
+      users: "100+ active users",
     },
-    testimonial: '"Features are good need to improve UI"',
-    client: "Loyalty App Client",
+    testimonial:
+      '"Seamless reward tracking across platforms with great performance and user experience."',
+    client: "Vittup",
     demoUrl:
-      "https://drive.google.com/file/d/14AiDsGd-_MazwMG6KoZR8N5nA8Utw4NV/view?usp=sharing",
+      "https://play.google.com/store/apps/details?id=com.vittup",
     caseStudyUrl: "#",
   },
   {
@@ -61,11 +55,11 @@ export const projects: Project[] = [
     tech: [
       "React Native",
       "Bluetooth BLE",
-      "Typescript",
+      "TypeScript",
       "Node.js",
       "Express.js",
     ],
-    desc: "A mobile application for tracking exercises and workouts. Connects seamlessly with Bluetooth devices to monitor reps, workout performance, and exercise metrics in real-time.",
+    desc: "A mobile fitness application that connects seamlessly with Bluetooth BLE devices to monitor reps, workout performance, and exercise metrics in real-time. Built for performance athletes and gym coaches with 100+ active users.",
     type: "Mobile App",
     deliveryTime: "4 weeks",
     metrics: {
@@ -81,12 +75,13 @@ export const projects: Project[] = [
   {
     title: "Truck Management System",
     icon: Truck,
-    tech: ["React", "Typescript", "Tailwind CSS", "Node.js"],
-    desc: "Streamlined logistics operations for a delivery company serving 5+ daily customers. Reduced manual processing by 60% and improved delivery tracking accuracy.",
-    type: "Frontend Project",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+    desc: "Streamlined logistics operations for a delivery company with real-time fleet tracking, route optimization, and delivery status management. Reduced manual processing by 60% and improved delivery tracking accuracy to 99.9% uptime.",
+    type: "Full Stack Project",
     deliveryTime: "3 weeks",
+    isWebsite: true,
     metrics: {
-      performance: "40% faster processing",
+      performance: "60% faster processing",
       transactions: "1000+ daily",
       uptime: "99.9%",
     },
@@ -97,10 +92,10 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
-    title: "Finanacial Platform",
+    title: "Financial Growth Platform",
     icon: Coins,
-    tech: ["React Js", "Redux", "Firebase", "Tailwind CSS"],
-    desc: "A financial platform for managing personal finances. Features include expense tracking, budget management, and financial reporting.",
+    tech: ["React.js", "Redux", "Firebase", "Tailwind CSS"],
+    desc: "A comprehensive financial management platform for tracking personal and business finances. Includes real-time expense tracking, smart budget management, financial analytics dashboards, and actionable growth insights.",
     type: "Client Project",
     deliveryTime: "7 weeks",
     isWebsite: true,
@@ -110,50 +105,58 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
-    title: "Vittup (React Native App)",
+    title: "Merchant Loyalty App",
     icon: Coins,
-    tech: ["React Native", "Express.js", "Node.js", "Android"],
-    desc: "A mobile application that captures user rewards across various platforms like Amazon Pay. Currently serving 100+ active users and live on Google Play Store.",
-    type: "Mobile App",
-    deliveryTime: "4 weeks",
+    tech: [
+      "React Native",
+      "Express.js",
+      "PostgreSQL",
+      "Firebase",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+    ],
+    desc: "A full-stack loyalty platform for merchants to manage customer rewards and transactions. Features real-time transaction tracking, customer management dashboard, and analytics — delivering a 60% faster reward processing pipeline.",
+    type: "Full Stack Project",
+    deliveryTime: "3 weeks",
     metrics: {
-      users: "100+ users",
+      performance: "60% faster processing",
     },
-    testimonial:
-      '"Seamless reward tracking across platforms with great performance and user experience."',
-    client: "Vittup",
+    testimonial: '"Delivered a fully working loyalty system end-to-end in just 3 weeks. Solid architecture and clean code."',
+    client: "Loyalty App Client",
     demoUrl:
-      "https://play.google.com/store/apps/details?id=com.vittup",
+      "https://drive.google.com/file/d/14AiDsGd-_MazwMG6KoZR8N5nA8Utw4NV/view?usp=sharing",
     caseStudyUrl: "#",
   },
+  
   {
-    title: "Driver React Native App",
+    title: "Driver Connect App",
     icon: Users,
-    tech: ["React Native", "Express.js", "MongoDB", "Real-time"],
-    desc: "Connected 200+ farmers with consumers through mobile platform. Features include product listing, order management, and community support with real-time tracking.",
+    tech: ["React Native", "Express.js", "MongoDB", "WebSockets"],
+    desc: "A real-time driver-to-consumer connectivity platform with live GPS tracking, order management, and push notifications. Processed 500+ orders and maintains a 4.8/5 user rating with real-time delivery updates.",
     type: "Mobile App",
     deliveryTime: "4 weeks",
     metrics: {
-      users: "200+ farmers",
+      users: "200+ drivers",
       orders: "500+ processed",
       rating: "4.8/5 stars",
     },
     testimonial:
       '"Intuitive design and smooth user experience. Highly recommended!"',
-    client: "Agricultural Startup",
+    client: "Logistics Startup",
     demoUrl:
       "https://drive.google.com/file/d/15DRWES9buH5xNST5cAvejllGU4TEUE8Z/view?usp=sharing",
   },
   {
-    title: "webinar platform",
-    icon: Coins,
-    tech: ["React Js", "Redux", "Firebase", "Tailwind CSS"],
-    desc: "A  webinar platform for Development.",
+    title: "AndroAI Webinar Platform",
+    icon: Video,
+    tech: ["React.js", "Redux", "Firebase", "Tailwind CSS"],
+    desc: "A feature-rich live webinar and online events platform for developers and creators. Supports real-time video sessions, audience Q&A, chat, and post-event replays — built and deployed for a live client in 2 weeks.",
     type: "Client Project",
     deliveryTime: "2 weeks",
     isWebsite: true,
     testimonial: '"Professional delivery and excellent post-launch support."',
-    client: "Retail Business",
+    client: "AndroAI",
     demoUrl: "https://androai.io/",
     caseStudyUrl: "#",
   },

@@ -1,7 +1,9 @@
 export const navigationItems = [
   { id: "home", label: "Home" },
+  { id: "services", label: "Services" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
+  { id: "testimonials", label: "Testimonials" },
   { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ] as const;

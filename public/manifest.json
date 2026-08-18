@@ -1,0 +1,16 @@
+{
+  "name": "Dinesh Freelancer Portfolio",
+  "short_name": "Dinesh.dev",
+  "description": "Professional freelance full-stack developer — Web, Mobile, Cloud",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

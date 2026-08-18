@@ -58,7 +58,7 @@ export default function Experience() {
 
               <div
                 className={`flex-1 ${
-                  index % 2 === 0 ? "md:pr-1/2 md:pr-8" : "md:ml-1/2 md:pl-8"
+                  index % 2 === 0 ? "md:mr-auto md:pr-8 md:max-w-[48%]" : "md:ml-auto md:pl-8 md:max-w-[48%]"
                 }`}
               >
                 {/* Content Card */}

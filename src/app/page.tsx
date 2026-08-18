@@ -4,6 +4,8 @@ import Header from "@/sections/Header";
 import Herosection from "@/sections/Herosection";
 import Projects from "@/sections/Projects";
 import Experience from "@/sections/Experience";
+import Services from "@/sections/Services";
+import Testimonials from "@/sections/Testimonials";
 
 export default function Home() {
   return (
@@ -12,11 +14,17 @@ export default function Home() {
       <div id="home">
         <Herosection />
       </div>
+      <div id="services">
+        <Services />
+      </div>
       <div id="experience">
         <Experience />
       </div>
       <div id="projects">
         <Projects />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="about">
         <About />

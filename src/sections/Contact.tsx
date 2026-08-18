@@ -122,9 +122,9 @@ export default function Contact() {
               Connect with Me:
             </h3>
             <div className="mb-4 text-center text-slate-600 dark:text-slate-400">
-              <p>Email: veerapareddydinesh@gmail.com</p>
+              <p>Email:{" "}<a href="mailto:veerapareddydinesh@gmail.com" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline transition-all">veerapareddydinesh@gmail.com</a></p>
             </div>
-            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+            <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
               {contactMethods.map((method, index) => (
                 <motion.a
                   key={method.id}
@@ -133,16 +133,19 @@ export default function Contact() {
                   rel={
                     method.id !== "resume" ? "noopener noreferrer" : undefined
                   }
-                  className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="flex flex-col items-center gap-2 group"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  whileTap={tapScale}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                   aria-label={`${method.title} - ${method.subtitle}`}
                 >
-                  <method.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:rotate-6 transition-transform">
+                    <method.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                  </div>
+                  <span className="text-xs font-semibold text-slate-600 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{method.title}</span>
                 </motion.a>
               ))}
             </div>
@@ -156,22 +159,24 @@ export default function Contact() {
             transition={{ delay: 0.5, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="space-y-4">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                <span>© {getCurrentYear()} Dinesh . All rights reserved.</span>
-                <span className="hidden md:inline">•</span>
-              </div>
-              <div className="flex items-center justify-center gap-4 text-xs text-slate-400 dark:text-slate-500">
+            <div className="space-y-3">
+              <p className="font-bold text-slate-900 dark:text-slate-100 text-lg">
+                Dinesh Veerapareddy
+              </p>
+              <div className="flex items-center justify-center gap-4 text-xs text-slate-400 dark:text-slate-500 font-medium">
                 <span>React Native Developer</span>
                 <span>•</span>
-                <span>Next.js experienced</span>
+                <span>Next.js Developer</span>
                 <span>•</span>
                 <span>Full Stack Engineer</span>
+                <span>•</span>
+                <span>AWS Certified</span>
               </div>
-              <p className="text-xs text-slate-400 dark:text-slate-500 max-w-2xl mx-auto">
-                This portfolio showcases my expertise in mobile and web
-                development. All project details and code samples are available
-                upon request with proper attribution.
+              <p className="text-sm text-slate-500 dark:text-slate-400">
+                © {getCurrentYear()} Dinesh Veerapareddy. All rights reserved.
+              </p>
+              <p className="text-xs text-slate-400 dark:text-slate-500">
+                Built with Next.js · TypeScript · Framer Motion
               </p>
             </div>
           </motion.footer>
