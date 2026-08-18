@@ -3,6 +3,7 @@ import {
   Leaf,
   Coins,
   Users,
+  Activity,
   LucideIcon,
 } from "lucide-react";
 
@@ -55,27 +56,26 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
-    title: "Customer Loyalty App",
-    icon: Coins,
+    title: "Myotrek Fitness App",
+    icon: Activity,
     tech: [
       "React Native",
-      "Express.js",
-      "Postgresql",
-      "firebase",
+      "Bluetooth BLE",
       "Typescript",
-      "Tailwind CSS",
       "Node.js",
+      "Express.js",
     ],
-    desc: "A loyalty app for merchants to manage customer rewards and transactions. Features include real-time transaction tracking, customer management, and analytics dashboard.",
-    type: "Full Stack Project",
-    deliveryTime: "3 weeks",
+    desc: "A mobile application for tracking exercises and workouts. Connects seamlessly with Bluetooth devices to monitor reps, workout performance, and exercise metrics in real-time.",
+    type: "Mobile App",
+    deliveryTime: "4 weeks",
     metrics: {
-      performance: "60% faster processing",
+      users: "100+ users",
     },
-    testimonial: '"Features are good need to improve UI"',
-    client: "Loyalty App Client",
+    testimonial:
+      '"Seamless Bluetooth integration and real-time exercise tracking makes workout management effortless."',
+    client: "Myotrek",
     demoUrl:
-      "https://drive.google.com/file/d/1Y_BPG9JRrk4Gox3GeaMnLiLgQPznOn0L/view?usp=sharing",
+      "https://play.google.com/store/apps/details?id=com.myotrek.fitness",
     caseStudyUrl: "#",
   },
   {
@@ -110,23 +110,20 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
-    title: "Agro Mart (React Native App)",
-    icon: Leaf,
-    tech: ["React Native", "Express.js", "MongoDB", "Real-time"],
-    desc: "Connected 200+ farmers with consumers through mobile platform. Features include product listing, order management, and community support with real-time tracking.",
+    title: "Vittup (React Native App)",
+    icon: Coins,
+    tech: ["React Native", "Express.js", "Node.js", "Android"],
+    desc: "A mobile application that captures user rewards across various platforms like Amazon Pay. Currently serving 100+ active users and live on Google Play Store.",
     type: "Mobile App",
     deliveryTime: "4 weeks",
     metrics: {
-      users: "200+ farmers",
-      orders: "500+ processed",
-      rating: "4.8/5 stars",
+      users: "100+ users",
     },
     testimonial:
-      '"Intuitive design and smooth user experience. Highly recommended!"',
-    client: "Agricultural Startup",
+      '"Seamless reward tracking across platforms with great performance and user experience."',
+    client: "Vittup",
     demoUrl:
-      "https://drive.google.com/file/d/1Gm_VRXkGUfuNejHvpDlqCcUn3fAZdxHA/view?usp=sharing",
-    githubUrl: "https://github.com/Dinesh-78/Agromart-react-native",
+      "https://play.google.com/store/apps/details?id=com.vittup",
     caseStudyUrl: "#",
   },
   {
