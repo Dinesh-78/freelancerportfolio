@@ -9,29 +9,31 @@ import Testimonials from "@/sections/Testimonials";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#FAF8F5] dark:bg-[#0D0F14] text-foreground font-sans selection:bg-[#FACC15] selection:text-black">
       <Header />
-      <div id="home">
-        <Herosection />
-      </div>
-      <div id="services">
-        <Services />
-      </div>
-      <div id="experience">
-        <Experience />
-      </div>
-      <div id="projects">
-        <Projects />
-      </div>
-      <div id="testimonials">
-        <Testimonials />
-      </div>
-      <div id="about">
-        <About />
-      </div>
-      <div id="contact">
-        <Contact />
-      </div>
+      <main>
+        <div id="home">
+          <Herosection />
+        </div>
+        <div id="services">
+          <Services />
+        </div>
+        <div id="projects">
+          <Projects />
+        </div>
+        <div id="experience">
+          <Experience />
+        </div>
+        <div id="about">
+          <About />
+        </div>
+        <div id="testimonials">
+          <Testimonials />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
+      </main>
     </div>
   );
 }

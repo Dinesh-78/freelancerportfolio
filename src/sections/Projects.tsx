@@ -1,243 +1,229 @@
 "use client";
 
-import React from "react";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  ExternalLink,
-  Calendar,
-  Users,
-  Zap,
-  Award,
-  MessageCircle,
-  Github,
-} from "lucide-react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { projects } from "@/constants/projects";
-import { socialLinks } from "@/constants/navigation";
-import {
-  containerVariants,
-  itemVariants,
-  hoverScale,
-  tapScale,
-} from "@/constants/animations";
+
+const filterCategories = ["All", "Mobile App", "Full Stack Project", "Client Project"];
 
 export default function Projects() {
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const filteredProjects =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((p) => p.type.toLowerCase().includes(activeFilter.toLowerCase()));
+
   return (
-    <section
-      id="projects"
-      className="py-20 px-4 sm:px-6 bg-gradient-to-br from-slate-50 via-purple-50 to-teal-50 dark:from-slate-900 dark:via-purple-950 dark:to-teal-950 relative overflow-hidden"
-    >
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <motion.div
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full mb-6 shadow-lg"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <Award className="h-4 w-4 text-white" />
-            <span className="text-sm font-medium text-white">
-              {projects.length} Successful Projects Completed
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 border-b-2 border-black/10 dark:border-slate-800 pb-6">
+          <div>
+            <span className="text-xs font-black uppercase tracking-widest text-[#2563EB] block mb-1">
+              Case Studies & Shipped Work
             </span>
-          </motion.div>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-foreground">
+              SELECTED SYSTEMS & WORK
+            </h2>
+            <p className="text-xs sm:text-sm font-medium text-muted-foreground mt-1">
+              Real-world production applications deployed to Google Play Store & Vercel
+            </p>
+          </div>
 
-          <h2 className="text-4xl  font-black mb-6">
-            <span className="text-blue-600 dark:text-blue-400">Featured</span>{" "}
-            <span className="text-slate-900 dark:text-slate-100">Projects</span>
-          </h2>
+          <div className="mt-4 md:mt-0 flex items-center gap-3">
+            <a
+              href="https://github.com/Dinesh-78"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-mono font-bold uppercase tracking-wider text-[#2563EB] hover:underline flex items-center gap-1.5"
+            >
+              <span>EXPLORE GITHUB (@Dinesh-78)</span>
+              <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+            </a>
+          </div>
+        </div>
 
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-8">
-            Full-stack web applications and mobile solutions built with modern
-            technologies. Each project delivered on time with 100% client
-            satisfaction.
-          </p>
-
-          {/* Trust Indicators */}
-          <motion.div
-            className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            {[
-              { icon: Zap, text: "100% On-Time Delivery" },
-              { icon: Users, text: "100% Quality Assurance" },
-              { icon: Award, text: "100% Client Satisfaction" },
-            ].map((indicator, index) => (
-              <motion.div
-                key={index}
-                className="flex items-center gap-2 text-blue-600 dark:text-blue-400"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + index * 0.1 }}
+        {/* Filter Pills */}
+        <div className="flex flex-wrap items-center gap-2 mb-10">
+          {filterCategories.map((cat) => {
+            const isActive = activeFilter === cat;
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setActiveFilter(cat)}
+                className={`neo-btn px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${
+                  isActive
+                    ? "bg-[#FACC15] text-black shadow-[3px_3px_0px_0px_#000]"
+                    : "bg-white dark:bg-[#151821] text-foreground hover:bg-secondary shadow-[2px_2px_0px_0px_#000]"
+                }`}
               >
-                <indicator.icon className="h-5 w-5" />
-                <span className="font-semibold text-sm sm:text-base">
-                  {indicator.text}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
+                {cat} {cat === "All" ? `(${projects.length})` : ""}
+              </button>
+            );
+          })}
+        </div>
 
-        {/* Projects Grid */}
-        <motion.div
-          className="grid gap-6 sm:gap-8 lg:grid-cols-3 md:grid-cols-2"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {projects.map((project, i) => (
-            <motion.div key={i} variants={itemVariants}>
-              <Card className="group h-full hover:shadow-2xl transform transition-all duration-500 border border-blue-200/50 dark:border-blue-800/50 shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <CardHeader className="pb-4 relative z-10">
-                  {project.isWebsite && (
-                    <div className="mx-6 mb-4 rounded-lg overflow-hidden border border-blue-200/50 dark:border-blue-800/50 relative aspect-video bg-slate-100 dark:bg-slate-900">
-                      <iframe
-                        src={project.demoUrl}
-                        title={`${project.title} live preview`}
-                        loading="lazy"
-                        className="w-full h-full pointer-events-none scale-100 origin-top-left"
-                        sandbox="allow-scripts allow-same-origin"
-                      />
-                      {/* transparent overlay so the iframe isn't interactive inside the card,
-        clicking anywhere still just opens the Live Demo link below */}
-                      <div className="absolute inset-0 bg-transparent" />
-                    </div>
-                  )}
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <motion.div
-                        className="p-2 rounded-lg bg-blue-50 dark:bg-blue-950/50"
-                        whileHover={{ rotate: 5, scale: 1.1 }}
-                      >
-                        <project.icon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                      </motion.div>
-                      <Badge
-                        variant="secondary"
-                        className="bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800"
-                      >
-                        {project.type}
-                      </Badge>
-                    </div>
-                  </div>
-
-                  <CardTitle className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    {project.title}
-                  </CardTitle>
-
-                  <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                    <Calendar className="h-4 w-4" />
-                    <span>Delivered in {project.deliveryTime}</span>
-                  </div>
-                </CardHeader>
-
-                <CardContent className="space-y-6 relative z-10">
-                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                    {project.desc}
-                  </p>
-
-                  {/* Tech Stack */}
+        {/* 2-Column Neo-Brutal Project Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, idx) => {
+              const Icon = project.icon;
+              return (
+                <motion.div
+                  key={project.title}
+                  layout
+                  initial={{ opacity: 0, y: 25 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 }}
+                  className="neo-box p-6 sm:p-8 flex flex-col justify-between border-2.5 border-black shadow-[6px_6px_0px_0px_#000] rounded-2xl bg-white dark:bg-[#151821] hover:shadow-[3px_3px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
+                >
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-sm">
-                      Technologies Used:
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tag, idx) => (
-                        <Badge
-                          key={idx}
-                          variant="outline"
-                          className="bg-blue-50/50 dark:bg-blue-950/50 border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-300 text-xs hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors"
-                        >
-                          {tag}
-                        </Badge>
-                      ))}
+                    {/* Top Category Badge & Type */}
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <span className="neo-badge text-[10px] sm:text-[11px] font-black uppercase px-3 py-1 rounded-full bg-[#FACC15] text-black">
+                        {project.type}
+                      </span>
+                      <span className="text-xs font-mono font-bold text-muted-foreground flex items-center gap-1">
+                        ⏱️ {project.deliveryTime}
+                      </span>
                     </div>
-                  </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-2 pt-4 border-t border-blue-200/50 dark:border-blue-800/50">
-                    <motion.a
-                      href={project.demoUrl}
-                      target="_blank"
-                      className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-lg font-medium transition-colors text-sm shadow-lg"
-                      whileHover={hoverScale}
-                      whileTap={tapScale}
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      Live Demo
-                    </motion.a>
-                    {project.githubUrl && (
-                      <motion.a
-                        href={project.githubUrl}
-                        target="_blank"
-                        className="flex-1 flex items-center justify-center gap-2 border border-blue-300 dark:border-blue-700 hover:bg-blue-50 dark:hover:bg-blue-950/50 px-4 py-2.5 rounded-lg font-medium transition-colors text-sm text-blue-700 dark:text-blue-300"
-                        whileHover={hoverScale}
-                        whileTap={tapScale}
-                      >
-                        <Github className="h-4 w-4" />
-                        GitHub
-                      </motion.a>
+                    {/* Project Title with Icon */}
+                    <div className="flex items-start gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-secondary border-2 border-black shadow-[2px_2px_0px_0px_#000] flex items-center justify-center text-foreground shrink-0 mt-0.5">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl sm:text-2xl font-black tracking-tight uppercase text-foreground leading-snug">
+                          {project.title}
+                        </h3>
+                        <span className="text-[11px] font-mono font-bold text-[#2563EB] uppercase">
+                          Client: {project.client}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-xs sm:text-sm text-foreground/85 leading-relaxed font-medium mb-6">
+                      {project.desc}
+                    </p>
+
+                    {/* Real Metrics Box if present */}
+                    {project.metrics && Object.keys(project.metrics).length > 0 && (
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 py-3 px-3 rounded-xl bg-secondary/50 border border-black/20 mb-6">
+                        {project.metrics.users && (
+                          <div className="text-center">
+                            <div className="text-base font-black text-foreground">
+                              {project.metrics.users}
+                            </div>
+                            <p className="text-[9px] font-bold text-muted-foreground uppercase">
+                              Active Traction
+                            </p>
+                          </div>
+                        )}
+                        {project.metrics.performance && (
+                          <div className="text-center">
+                            <div className="text-base font-black text-[#10B981]">
+                              {project.metrics.performance}
+                            </div>
+                            <p className="text-[9px] font-bold text-muted-foreground uppercase">
+                              Speed Impact
+                            </p>
+                          </div>
+                        )}
+                        {project.metrics.transactions && (
+                          <div className="text-center">
+                            <div className="text-base font-black text-[#2563EB]">
+                              {project.metrics.transactions}
+                            </div>
+                            <p className="text-[9px] font-bold text-muted-foreground uppercase">
+                              Volume
+                            </p>
+                          </div>
+                        )}
+                        {project.metrics.uptime && (
+                          <div className="text-center">
+                            <div className="text-base font-black text-foreground">
+                              {project.metrics.uptime}
+                            </div>
+                            <p className="text-[9px] font-bold text-muted-foreground uppercase">
+                              Uptime
+                            </p>
+                          </div>
+                        )}
+                        {project.metrics.orders && (
+                          <div className="text-center">
+                            <div className="text-base font-black text-foreground">
+                              {project.metrics.orders}
+                            </div>
+                            <p className="text-[9px] font-bold text-muted-foreground uppercase">
+                              Orders Done
+                            </p>
+                          </div>
+                        )}
+                        {project.metrics.rating && (
+                          <div className="text-center">
+                            <div className="text-base font-black text-[#EF4444]">
+                              {project.metrics.rating}
+                            </div>
+                            <p className="text-[9px] font-bold text-muted-foreground uppercase">
+                              Rating
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Testimonial Quote */}
+                    {project.testimonial && (
+                      <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs italic text-foreground/80 mb-6 font-medium">
+                        {project.testimonial}
+                      </div>
                     )}
                   </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
 
-        {/* Enhanced CTA Section */}
-        <motion.div
-          className="mt-20 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="relative z-10">
-            <h3 className="text-3xl sm:text-4xl font-black mb-4 text-blue-600 dark:text-blue-400">
-              Ready to Start Your Project?
-            </h3>
-            <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
-              Join satisfied clients who have transformed their ideas into
-              successful digital products.
-            </p>
+                  {/* Tech Stack Pills & Live Action Button */}
+                  <div>
+                    {/* Tech Pills */}
+                    <div className="flex flex-wrap gap-1.5 mb-5">
+                      {project.tech.map((t, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="neo-badge text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-secondary text-foreground/90 border border-black/40"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
 
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <motion.a
-                href={socialLinks.whatsapp}
-                target="_blank"
-                className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg"
-                whileHover={hoverScale}
-                whileTap={tapScale}
-              >
-                <MessageCircle className="h-5 w-5" />
-                WhatsApp Me Now
-              </motion.a>
-            </motion.div>
-          </div>
-        </motion.div>
+                    {/* Action Bar */}
+                    <div className="pt-3 border-t-2 border-black/10 dark:border-slate-800 flex items-center justify-between">
+                      <span className="text-[11px] font-mono font-bold text-muted-foreground uppercase">
+                        {project.isWebsite ? "Web Application" : "Mobile / Full-Stack"}
+                      </span>
 
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="neo-btn bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider gap-1.5 hover:bg-[#2563EB] dark:hover:bg-[#2563EB] dark:hover:text-white transition-colors"
+                        >
+                          <span>{project.demoUrl.includes("play.google") ? "Play Store Live" : "Live Demo"}</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );

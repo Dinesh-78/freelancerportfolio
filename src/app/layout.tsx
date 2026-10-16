@@ -1,72 +1,66 @@
 import type { Metadata } from "next";
-import {  Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-
-
+import CustomCursor from "@/components/CustomCursor";
 
 const font = Poppins({
-  weight: ['100','200','300','400','500','600','700','800','900'],
-  subsets:['latin']
-})
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+});
 
 export const metadata: Metadata = {
   title: {
-    default: "Dinesh - Professional Web Designer & React Native App Developer",
-    template: "%s | Dinesh Freelancer"
+    default: "Dinesh Veerapareddy — Software Consultant | Full-Stack & AI Solutions",
+    template: "%s | Dinesh Veerapareddy"
   },
-  description: "Experienced freelance web designer and React Native app developer. Specializing in modern web design, mobile app development, and digital solutions. Get premium websites and mobile apps that drive results.",
+  description: "I help businesses and startups build production-grade software solutions — from scratch development to end-to-end applications. Full-stack development, mobile apps, AI automation, and cloud engineering. Book a free strategy call.",
   keywords: [
-    "freelance web designer",
-    "react native developer",
-    "mobile app development",
-    "web development",
-    "UI/UX design",
-    "responsive web design",
+    "software consultant",
+    "full-stack developer",
+    "AI automation solutions",
+    "custom web application development",
+    "react native app developer",
     "next.js developer",
-    "freelancer",
-    "app designer",
-    "digital solutions",
-    "Software Engineer",
-    "MERN Stack Developer",
-    "Next.js Developer",
-    "React Native Developer",
-    "TypeScript Developer",
-    "Cloud Developer",
-    "DevOps Engineer",
-    "Full Stack Developer",
+    "business process automation",
+    "MVP development",
+    "startup software development",
+    "enterprise software solutions",
+    "MERN stack developer",
+    "Spring Boot developer",
+    "AWS certified developer",
+    "software engineering consultant India",
   ],
-  authors: [{ name: "Dinesh", url: "https://dineshportfolio-alpha.vercel.app/" }],
-  creator: "Dinesh",
-  publisher: "Dinesh Freelancer",
+  authors: [{ name: "Dinesh Veerapareddy", url: "https://dineshportfolio-alpha.vercel.app/" }],
+  creator: "Dinesh Veerapareddy",
+  publisher: "Dinesh Veerapareddy",
   
-  // Open Graph for social media
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://dineshportfolio-alpha.vercel.app/",
-    title: "Dinesh - Professional Web Designer & React Native App Developer",
-    description: "Expert freelance web designer and React Native app developer. Get premium websites and mobile apps that drive results.",
-    siteName: "Dinesh Freelancer Portfolio",
+    title: "Dinesh Veerapareddy — Software Consultant | Full-Stack & AI Solutions",
+    description: "I help businesses build software that drives growth. From MVPs to enterprise-grade applications — book a free strategy call.",
+    siteName: "Dinesh Veerapareddy — Software Consultant",
     images: [
       {
         url: "https://dineshportfolio-alpha.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Dinesh Freelancer - Web Design & App Development Services",
+        alt: "Dinesh Veerapareddy — Software Consultant",
       },
     ],
   },
   
-  // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "Dinesh - Professional Web Designer & React Native App Developer",
-    description: "Expert freelance web designer and React Native app developer. Get premium websites and mobile apps that drive results.",
-    creator: "@dinesh_portfolio",
+    title: "Dinesh Veerapareddy — Software Consultant | Full-Stack & AI Solutions",
+    description: "I help businesses build software that drives growth. Book a free strategy call.",
+    creator: "@vdinesh2222",
     images: ["https://dineshportfolio-alpha.vercel.app/twitter-image.jpg"],
   },
   
-  // Additional SEO
   robots: {
     index: true,
     follow: true,
@@ -79,16 +73,12 @@ export const metadata: Metadata = {
     },
   },
   
-  // Canonical URL
   alternates: {
     canonical: "https://dineshportfolio-alpha.vercel.app/",
   },
   
-  // App-specific metadata
-  applicationName: "Dinesh Freelancer Portfolio",
-  
-  // Category for app stores
-  category: "Business",
+  applicationName: "Dinesh Veerapareddy — Software Consultant",
+  category: "Technology",
 };
 
 
@@ -123,9 +113,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Dinesh",
-              "jobTitle": "Freelance Web Designer & React Native Developer",
-              "description": "Professional freelance web designer and React Native app developer specializing in modern web solutions and mobile applications.",
+              "name": "Dinesh Veerapareddy",
+              "jobTitle": "Software Consultant & Full-Stack Developer",
+              "description": "I help businesses and startups build production-grade software solutions — from scratch development to end-to-end applications, AI automation, and cloud engineering.",
               "url": "https://dineshportfolio-alpha.vercel.app/",
               "sameAs": [
                 "https://www.linkedin.com/in/dinesh-veerapareddy/",
@@ -133,37 +123,46 @@ export default function RootLayout({
                 "https://x.com/vdinesh2222"
               ],
               "knowsAbout": [
-                "Web Design",
+                "Full-Stack Development",
                 "React Native Development",
-                "Mobile App Development",
-                "UI/UX Design",
+                "AI Automation",
+                "Business Process Automation",
+                "Cloud Engineering (AWS)",
                 "Next.js",
-                "React",
-                "JavaScript",
+                "Spring Boot",
+                "System Design",
                 "TypeScript"
               ],
               "offers": {
                 "@type": "Service",
-                "serviceType": "Web Design and Mobile App Development",
-                "areaServed": "Worldwide",
+                "serviceType": "Software Consulting & Development",
+                "areaServed": "",
                 "hasOfferCatalog": {
                   "@type": "OfferCatalog",
-                  "name": "Web Design & App Development Services",
+                  "name": "Software Solutions",
                   "itemListElement": [
                     {
                       "@type": "Offer",
                       "itemOffered": {
                         "@type": "Service",
-                        "name": "Web Design",
-                        "description": "Custom responsive web design and development"
+                        "name": "Custom Web Application Development",
+                        "description": "Full-stack web applications built with Next.js, React, and Node.js"
                       }
                     },
                     {
                       "@type": "Offer",
                       "itemOffered": {
                         "@type": "Service",
-                        "name": "React Native App Development",
-                        "description": "Cross-platform mobile app development"
+                        "name": "Mobile App Development",
+                        "description": "Cross-platform mobile apps with React Native"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "AI & Automation Solutions",
+                        "description": "AI chatbots, business process automation, and intelligent data analytics"
                       }
                     }
                   ]
@@ -176,8 +175,9 @@ export default function RootLayout({
       
       </head>
       <body
-        className={`${font.className} antialiased`}
+        className={`${font.className} ${font.variable} antialiased`}
       >
+        <CustomCursor />
         {children}
 
       <script
@@ -186,12 +186,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Dinesh Freelancer Portfolio",
+              "name": "Dinesh Veerapareddy — Software Consultant",
               "url": "https://dineshportfolio-alpha.vercel.app/",
-              "description": "Professional freelance full-stack web development, React Native app development, and cloud engineering services",
+              "description": "I help businesses and startups build production-grade software solutions — full-stack development, mobile apps, AI automation, and cloud engineering.",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://yourportfolio.com/search?q={search_term_string}",
+                "target": "https://dineshportfolio-alpha.vercel.app/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             })

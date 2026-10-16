@@ -2,166 +2,158 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Quote, Star } from "lucide-react";
-import { containerVariants, itemVariants } from "@/constants/animations";
+import { ArrowUpRight, CheckCircle2, Smartphone, Activity, Building2 } from "lucide-react";
 
-const testimonials = [
+const outcomes = [
   {
-    quote:
-      "Seamless Bluetooth integration and real-time exercise tracking makes workout management effortless. Exactly what we needed for our fitness platform.",
-    author: "Myotrek Team",
-    role: "Fitness App Client",
-    project: "Myotrek Fitness App",
-    stars: 5,
+    title: "Vittup Rewards Platform",
+    category: "LIVE ON GOOGLE PLAY",
+    icon: Smartphone,
+    iconBg: "bg-[#FACC15] text-black",
+    summary:
+      "A cross-platform mobile rewards aggregator engineered with React Native and Node.js. Captures cashback metrics and reward balances across multiple payment partners into a single real-time wallet.",
+    metricBadge: "100+ Active Installs",
+    techStack: ["React Native", "Node.js", "Express", "Android SDK"],
+    verificationLink: "https://play.google.com/store/apps/details?id=com.vittup",
+    linkText: "Google Play Store ↗",
   },
   {
-    quote:
-      "Delivered ahead of schedule with excellent API performance. The system handles thousands of daily operations without a glitch.",
-    author: "Logistics Company",
-    role: "Fleet Management Client",
-    project: "Truck Management System",
-    stars: 5,
+    title: "Myotrek Fitness App",
+    category: "BLUETOOTH BLE HARDWARE",
+    icon: Activity,
+    iconBg: "bg-[#10B981] text-white",
+    summary:
+      "Engineered real-time Bluetooth Low Energy (BLE) peripheral sync for fitness athletes. Streams sensor workout reps, sets, and velocity metrics with zero connection dropouts during workouts.",
+    metricBadge: "Verified Hardware Sync",
+    techStack: ["React Native", "Bluetooth BLE", "TypeScript", "Node.js"],
+    verificationLink: "https://play.google.com/store/apps/details?id=com.myotrek.fitness",
+    linkText: "Google Play Store ↗",
   },
   {
-    quote:
-      "Seamless reward tracking across platforms with great performance and user experience. Our users love the app.",
-    author: "Vittup Team",
-    role: "Rewards App Client",
-    project: "Vittup Rewards App",
-    stars: 5,
+    title: "Enterprise Healthcare Claims",
+    category: "CARELON GLOBAL SOLUTIONS",
+    icon: Building2,
+    iconBg: "bg-[#2563EB] text-white",
+    summary:
+      "Engineered robust Java / Spring Boot microservices and automated claims processing pipelines with AWS CloudWatch observability. Maintained platform reliability for millions of health plan members.",
+    metricBadge: "Enterprise SLA Grade",
+    techStack: ["Spring Boot", "AWS CloudWatch", "PostgreSQL", "Docker"],
+    verificationLink: "#experience",
+    linkText: "View Track Record ↗",
   },
-  {
-    quote:
-      "Professional delivery and excellent post-launch support. Dinesh understood our vision and brought it to life with precision.",
-    author: "AndroAI",
-    role: "Webinar Platform Client",
-    project: "AndroAI Webinar Platform",
-    stars: 5,
-  },
-  
 ];
 
 export default function Testimonials() {
   return (
-    <section
-      id="testimonials"
-      className="py-20 px-4 sm:px-6 bg-gradient-to-br from-blue-50 via-slate-50 to-purple-50 dark:from-blue-950 dark:via-slate-900 dark:to-purple-950 relative overflow-hidden"
-    >
-      {/* Background blur elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-blue-400/10 dark:bg-blue-600/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-400/10 dark:bg-purple-600/10 rounded-full blur-3xl" />
-      </div>
-
-      <div className="max-w-7xl mx-auto relative">
-        {/* Header */}
+    <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto">
+        {/* Container Box */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <motion.div
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full mb-6 shadow-lg"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <Star className="h-4 w-4 text-white fill-white" />
-            <span className="text-sm font-medium text-white">
-              Client Reviews
-            </span>
-          </motion.div>
-
-          <h2 className="text-4xl font-black mb-4">
-            What{" "}
-            <span className="text-blue-600 dark:text-blue-400">Clients Say</span>
-          </h2>
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-            Real feedback from founders, startups, and businesses I&apos;ve
-            worked with
-          </p>
-        </motion.div>
-
-        {/* Testimonials Grid */}
-        <motion.div
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              variants={itemVariants}
-              className="relative bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl p-6 border border-blue-200/50 dark:border-blue-800/50 shadow-lg hover:border-blue-400 dark:hover:border-blue-600 transition-all group"
-              whileHover={{ scale: 1.02, y: -5 }}
-            >
-              {/* Quote icon */}
-              <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Quote className="w-12 h-12 text-blue-600" />
-              </div>
-
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: t.stars }).map((_, si) => (
-                  <Star
-                    key={si}
-                    className="w-4 h-4 text-yellow-400 fill-yellow-400"
-                  />
-                ))}
-              </div>
-
-              {/* Quote */}
-              <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6 relative">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-3 pt-4 border-t border-blue-200/50 dark:border-blue-800/50">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-md">
-                  <span className="text-white font-bold text-sm">
-                    {t.author.charAt(0)}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-bold text-slate-900 dark:text-slate-100 text-sm">
-                    {t.author}
-                  </p>
-                  <p className="text-xs text-blue-600 dark:text-blue-400">
-                    {t.role}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Trust indicators */}
-        <motion.div
-          className="mt-16 flex flex-wrap justify-center gap-8 sm:gap-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="bg-[#EF4444] text-white border-2.5 border-black rounded-3xl p-6 sm:p-10 shadow-[8px_8px_0px_0px_#000] relative"
         >
-          {[
-            { value: "100%", label: "Client Satisfaction" },
-            { value: "5.0", label: "Average Rating" },
-            { value: "7+", label: "Happy Clients" },
-          ].map((stat, i) => (
-            <div key={i} className="text-center">
-              <p className="text-3xl font-black text-blue-600 dark:text-blue-400">
-                {stat.value}
-              </p>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">
-                {stat.label}
+          {/* Header Bar inside Red Box */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-white/20 pb-6 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="neo-sticker bg-[#FACC15] text-black text-[10px] font-black px-2.5 py-0.5 rounded uppercase">
+                  VERIFIABLE TRACK RECORD
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-black tracking-tight uppercase">
+                PROVEN DELIVERABLES & OUTCOMES
+              </h2>
+              <p className="text-xs sm:text-sm text-white/85 font-medium mt-1">
+                Real apps in the hands of real users — no fabricated client quotes or unverified claims.
               </p>
             </div>
-          ))}
+
+            <a
+              href="https://github.com/Dinesh-78"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="neo-btn bg-white text-black px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider gap-1.5 self-start sm:self-auto shadow-[3px_3px_0px_0px_#000]"
+            >
+              <span>INSPECT CODE ON GITHUB</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          {/* 3 Outcome Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {outcomes.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  whileHover={{ y: -4 }}
+                  className="bg-white text-black border-2 border-black rounded-2xl p-6 shadow-[5px_5px_0px_0px_#000] flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Top Category Badge */}
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground">
+                        {item.category}
+                      </span>
+                      <span className="neo-badge bg-[#10B981]/15 text-[#059669] border-[#10B981] px-2 py-0.5 rounded text-[10px] font-bold flex items-center gap-1">
+                        <CheckCircle2 className="w-3 h-3" />
+                        {item.metricBadge}
+                      </span>
+                    </div>
+
+                    {/* Title with Icon */}
+                    <div className="flex items-start gap-3 mb-3">
+                      <div
+                        className={`w-10 h-10 rounded-xl ${item.iconBg} border-2 border-black shadow-[2px_2px_0px_0px_#000] flex items-center justify-center shrink-0 mt-0.5`}
+                      >
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-black tracking-tight uppercase text-black leading-snug">
+                          {item.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Summary */}
+                    <p className="text-xs sm:text-[13px] font-medium leading-relaxed mb-4 text-black/85">
+                      {item.summary}
+                    </p>
+
+                    {/* Tech Badges */}
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {item.techStack.map((tech, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-secondary text-foreground/80 border border-black/20"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Verification Link */}
+                  <div className="pt-4 border-t border-black/10 flex items-center justify-between">
+                    <span className="text-[11px] font-mono font-bold text-muted-foreground uppercase">
+                      Proof of Delivery:
+                    </span>
+                    <a
+                      href={item.verificationLink}
+                      target={item.verificationLink.startsWith("http") ? "_blank" : undefined}
+                      rel={item.verificationLink.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="text-xs font-black uppercase text-[#2563EB] hover:underline flex items-center gap-1"
+                    >
+                      <span>{item.linkText}</span>
+                    </a>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </motion.div>
       </div>
     </section>

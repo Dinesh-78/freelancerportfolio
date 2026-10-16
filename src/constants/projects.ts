@@ -1,6 +1,5 @@
 import {
   Truck,
-  Leaf,
   Coins,
   Users,
   Activity,

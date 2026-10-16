@@ -1,33 +1,46 @@
-import { Code, Database, Cloud, Smartphone } from "lucide-react";
-
 export const heroData = {
-  title: "Building MVPs for Startups",
-  subtitle: "Full Stack Developer • MERN Stack experienced",
-  description:
-    "Experienced in MERN stack applications with focus on performance, maintainability, and security. Specializing in Next.js, React Native, TypeScript, and cloud infrastructure.",
+  // Rotating text phrases for the animated headline
+  rotatingWords: [
+    "Web Applications",
+    "Mobile Apps",
+    "AI Automation",
+    "Cloud Solutions",
+    "SaaS Products",
+  ],
+  
+  // Main value proposition
+  headline: "I help businesses build software that drives growth",
+  subheadline: "From idea to production in weeks — not months. Full-stack development, mobile apps, AI automation, and enterprise-grade architecture.",
+  
+  // CTA
   cta: {
     primary: {
-      text: "Start Your Project",
-      href: "https://wa.me/+918374330906?text=Hi%20Dinesh%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20you",
+      text: "Book a Free Strategy Call",
+      href: "https://calendly.com/dineshreddy0906/30min",
     },
     secondary: {
-      text: "View Resume",
-      href: "https://drive.google.com/file/d/1q1BJc9afcA2kZVJJsRGza3bbbLQTvWGY/view?usp=sharing",
+      text: "View My Work",
+      href: "#projects",
     },
   },
-  techStack: [
-    { icon: Code, label: "Frontend" },
-    { icon: Database, label: "Backend" },
-    { icon: Cloud, label: "Cloud" },
-    { icon: Smartphone, label: "Mobile" },
+
+  // Social proof stats
+  stats: [
+    { value: "3+", label: "Years Experience" },
+    { value: "7+", label: "Projects Delivered" },
+    { value: "100%", label: "Client Satisfaction" },
+    { value: "AWS", label: "Certified" },
   ],
+
+  // Trust badges / tech stack
   badges: [
-    "MERN Stack",
-    "Spring Boot",
-    "Next.js & TypeScript",
+    "Next.js & React",
     "React Native",
+    "Spring Boot",
+    "Node.js",
+    "TypeScript",
     "AWS Certified",
-    "Docker & Kubernetes",
-    "Performance Optimized",
+    "AI & Automation",
+    "Docker & K8s",
   ],
 } as const;

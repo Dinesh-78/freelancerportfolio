@@ -26,97 +26,214 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* ─── Neo-Brutalist Tech Agency Theme (Reference Design System) ─── */
 :root {
-  --radius: 0.625rem;
-  /* Modern gradient theme: Blues, Purples, and Teals */
-  --background: oklch(0.99 0.01 250); /* Light blue-tinted white */
-  --foreground: oklch(0.15 0.05 250); /* Deep blue-slate */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.05 250);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.05 250);
-  --primary: oklch(0.55 0.2 250); /* Blue */
-  --primary-foreground: oklch(1 0 0); /* White */
-  --secondary: oklch(0.65 0.15 200); /* Teal */
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.95 0.01 250); /* Light blue-gray */
-  --muted-foreground: oklch(0.5 0.05 250); /* Medium blue-gray */
-  --accent: oklch(0.6 0.18 280); /* Purple */
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0.02 250); /* Light blue border */
-  --input: oklch(0.9 0.02 250);
-  --ring: oklch(0.55 0.2 250); /* Blue ring */
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.98 0.01 250);
-  --sidebar-foreground: oklch(0.15 0.05 250);
-  --sidebar-primary: oklch(0.55 0.2 250);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.95 0.01 250);
-  --sidebar-accent-foreground: oklch(0.15 0.05 250);
-  --sidebar-border: oklch(0.9 0.02 250);
-  --sidebar-ring: oklch(0.55 0.2 250);
+  --radius: 1rem;
+  --background: #FAF8F5; /* Warm editorial cream/canvas */
+  --foreground: #0A0A0A; /* Jet black */
+  --card: #FFFFFF;
+  --card-foreground: #0A0A0A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0A0A0A;
+  --primary: #0A0A0A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3EFEA;
+  --secondary-foreground: #0A0A0A;
+  --muted: #EFEAE4;
+  --muted-foreground: #52525B;
+  --accent: #2563EB; /* Royal Cobalt Blue */
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444; /* Punchy Coral Red */
+  --border: #0A0A0A; /* Solid black borders */
+  --input: #0A0A0A;
+  --ring: #2563EB;
+
+  /* Specific Brand Colors from Reference */
+  --brand-yellow: #FACC15;
+  --brand-blue: #2563EB;
+  --brand-red: #EF4444;
+  --brand-green: #10B981;
 }
 
+/* Dark Mode adaptation with high contrast crisp neo-borders */
 .dark {
-  /* Modern gradient theme: Deep Blues, Purples, and Teals */
-  --background: oklch(0.1 0.05 250); /* Deep blue-slate */
-  --foreground: oklch(0.95 0.01 250); /* Light blue-tinted white */
-  --card: oklch(0.12 0.05 250); /* Dark blue-slate */
-  --card-foreground: oklch(0.95 0.01 250);
-  --popover: oklch(0.12 0.05 250);
-  --popover-foreground: oklch(0.95 0.01 250);
-  --primary: oklch(0.65 0.2 250); /* Bright blue */
-  --primary-foreground: oklch(0.1 0.05 250); /* Dark background */
-  --secondary: oklch(0.7 0.15 200); /* Bright teal */
-  --secondary-foreground: oklch(0.1 0.05 250);
-  --muted: oklch(0.15 0.05 250);
-  --muted-foreground: oklch(0.7 0.02 250); /* Light blue-gray */
-  --accent: oklch(0.7 0.18 280); /* Bright purple */
-  --accent-foreground: oklch(0.1 0.05 250);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(0.2 0.05 250); /* Dark blue border */
-  --input: oklch(0.2 0.05 250);
-  --ring: oklch(0.65 0.2 250); /* Blue ring */
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.12 0.05 250);
-  --sidebar-foreground: oklch(0.95 0.01 250);
-  --sidebar-primary: oklch(0.65 0.2 250);
-  --sidebar-primary-foreground: oklch(0.1 0.05 250);
-  --sidebar-accent: oklch(0.15 0.05 250);
-  --sidebar-accent-foreground: oklch(0.95 0.01 250);
-  --sidebar-border: oklch(0.2 0.05 250);
-  --sidebar-ring: oklch(0.65 0.2 250);
+  --background: #0D0F14;
+  --foreground: #F8FAFC;
+  --card: #151821;
+  --card-foreground: #F8FAFC;
+  --popover: #151821;
+  --popover-foreground: #F8FAFC;
+  --primary: #F8FAFC;
+  --primary-foreground: #0A0A0A;
+  --secondary: #1E2330;
+  --secondary-foreground: #F8FAFC;
+  --muted: #1E2330;
+  --muted-foreground: #94A3B8;
+  --accent: #3B82F6;
+  --accent-foreground: #FFFFFF;
+  --destructive: #F87171;
+  --border: #334155;
+  --input: #334155;
+  --ring: #3B82F6;
+
+  --brand-yellow: #FBBF24;
+  --brand-blue: #3B82F6;
+  --brand-red: #F87171;
+  --brand-green: #34D399;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ─── Neo-Brutalist Design System Utilities ─── */
+
+/* Hard offset drop shadow boxes */
+.neo-box {
+  background-color: var(--card);
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  border-radius: 1.25rem;
+  transition: all 0.2s ease-in-out;
+}
+.dark .neo-box {
+  border: 2px solid #334155;
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.neo-box-sm {
+  background-color: var(--card);
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  border-radius: 0.875rem;
+  transition: all 0.2s ease-in-out;
+}
+.dark .neo-box-sm {
+  border: 2px solid #334155;
+  box-shadow: 3px 3px 0px 0px #000000;
+}
+
+.neo-box-lg {
+  background-color: var(--card);
+  border: 2.5px solid #000000;
+  box-shadow: 6px 6px 0px 0px #000000;
+  border-radius: 1.75rem;
+}
+.dark .neo-box-lg {
+  border: 2.5px solid #334155;
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+/* Interactive Neo Buttons with physical press down feel */
+.neo-btn {
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.neo-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+.neo-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+.dark .neo-btn {
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+}
+
+/* Neo Badges & Stickers */
+.neo-badge {
+  border: 1.5px solid #000000;
+  box-shadow: 2px 2px 0px 0px #000000;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+.dark .neo-badge {
+  border: 1.5px solid #334155;
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+.neo-sticker {
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+}
+.dark .neo-sticker {
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+}
+
+/* Yellow Highlighter Marker for text */
+.highlight-yellow {
+  background-color: #FEF08A;
+  color: #0A0A0A;
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.dark .highlight-yellow {
+  background-color: #FBBF24;
+  color: #0A0A0A;
+}
+
+/* Dot grid background */
+.dot-grid-bg {
+  background-image: radial-gradient(circle, #CBD5E1 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+.dark .dot-grid-bg {
+  background-image: radial-gradient(circle, #334155 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Selection color */
+::selection {
+  background: #FACC15;
+  color: #000000;
+}
+
+/* Hide default regular browser cursor only when custom animated cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active body,
+  html.custom-cursor-active a,
+  html.custom-cursor-active button,
+  html.custom-cursor-active input,
+  html.custom-cursor-active textarea,
+  html.custom-cursor-active select,
+  html.custom-cursor-active [role="button"],
+  html.custom-cursor-active .cursor-pointer,
+  html.custom-cursor-active * {
+    cursor: none !important;
   }
 }

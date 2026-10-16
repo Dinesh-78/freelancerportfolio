@@ -2,186 +2,236 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { skills, contactMethods } from "@/constants/contact";
-import { hoverScale, tapScale } from "@/constants/animations";
+import { ArrowUpRight, Mail, Phone, MapPin, Calendar } from "lucide-react";
 
 export default function Contact() {
-  const getCurrentYear = () => new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
   return (
     <>
-      <section
-        className="relative py-20 px-6 overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50 to-blue-50 dark:from-slate-900 dark:via-purple-950 dark:to-blue-950"
-        id="contact"
-        aria-labelledby="contact-heading"
-      >
-        <div className="relative max-w-6xl mx-auto">
-          {/* Header Section */}
+      {/* ── BIG YELLOW CTA & BOOK A CALL SECTION ── */}
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto">
           <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2
-              id="contact-heading"
-              className="text-4xl font-bold mb-6 text-blue-600 dark:text-blue-400"
-            >
-              Let&apos;s Create Something Amazing
-            </h2>
-
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed mb-8">
-              Whether you are a{" "}
-              <span className="font-semibold text-blue-600 dark:text-blue-400">
-                startup
-              </span>
-              ,
-              <span className="font-semibold text-blue-600 dark:text-blue-400">
-                {" "}
-                business owner
-              </span>
-              , or
-              <span className="font-semibold text-blue-600 dark:text-blue-400">
-                {" "}
-                recruiter
-              </span>{" "}
-              — I would love to hear from you.
-            </p>
-          </motion.div>
-
-          {/* Skills Section */}
-          <motion.div
-            className="mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">
-                My Skills & Expertise
-              </h3>
-              <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                Technologies I use to bring ideas to life
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  className="text-center group"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05, duration: 0.5 }}
-                  viewport={{ once: true }}
-                  whileHover={hoverScale}
-                >
-                  <motion.div
-                    className="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-3 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center group-hover:bg-blue-50 dark:group-hover:bg-blue-950/50 transition-colors duration-300 shadow-lg border border-blue-200/50 dark:border-blue-800/50"
-                    whileHover={{ rotate: 5, scale: 1.1 }}
-                  >
-                    {skill.iconUrl ? (
-                      <Image
-                        src={skill.iconUrl}
-                        alt={skill.name}
-                        width={32}
-                        height={32}
-                        className="w-8 h-8 sm:w-9 sm:h-9 object-contain"
-                        unoptimized
-                      />
-                    ) : skill.icon ? (
-                      <skill.icon className="w-6 h-6 sm:w-7 sm:h-7 text-blue-600 dark:text-blue-400" />
-                    ) : (
-                      <span className="text-xs font-bold text-blue-600 dark:text-blue-400">
-                        {skill.name.charAt(0)}
-                      </span>
-                    )}
-                  </motion.div>
-                  <h4 className="font-semibold text-slate-900 dark:text-slate-100 text-xs sm:text-sm mb-1">
-                    {skill.name}
-                  </h4>
-                  <p className="text-xs text-blue-600 dark:text-blue-400">
-                    {skill.level}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Connect with Me Section */}
-          <motion.div
-            className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="w-full bg-[#FACC15] text-black border-2.5 border-black rounded-3xl p-8 sm:p-12 lg:p-14 shadow-[8px_8px_0px_0px_#000] relative overflow-hidden"
           >
-            <h3 className="text-2xl font-black mb-4 text-center text-blue-600 dark:text-blue-400">
-              Connect with Me:
-            </h3>
-            <div className="mb-4 text-center text-slate-600 dark:text-slate-400">
-              <p>Email:{" "}<a href="mailto:veerapareddydinesh@gmail.com" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline transition-all">veerapareddydinesh@gmail.com</a></p>
+            {/* Top Available Badge */}
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b-2 border-black/15">
+              <span className="neo-sticker bg-white text-black text-[10px] sm:text-xs font-black px-3.5 py-1.5 rounded-lg shadow-[2px_2px_0px_0px_#000]">
+                ⚡ TAKING 1-2 SELECT CLIENT PROJECTS • CONTRACT & CLOUD
+              </span>
+              <span className="text-xs font-mono font-bold text-black/75">
+                Bengaluru, India 
+              </span>
             </div>
-            <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
-              {contactMethods.map((method, index) => (
-                <motion.a
-                  key={method.id}
-                  href={method.href}
-                  target="_blank"
-                  rel={
-                    method.id !== "resume" ? "noopener noreferrer" : undefined
-                  }
-                  className="flex flex-col items-center gap-2 group"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  aria-label={`${method.title} - ${method.subtitle}`}
-                >
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:rotate-6 transition-transform">
-                    <method.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              {/* Left Column: Heading, Subtext, and Action Buttons */}
+              <div className="lg:col-span-8 flex flex-col items-start text-left">
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05] mb-5">
+                  READY TO BUILD SYSTEMS <br />
+                  <span className="text-[#2563EB]">THAT SCALE?</span>
+                </h2>
+
+                <p className="text-sm sm:text-base font-medium text-black/85 max-w-2xl leading-relaxed mb-8">
+                  Let&apos;s build something robust together. Whether you need a full-stack web application, an offline-first mobile system, or an enterprise cloud architecture, grab 30 minutes on my calendar and let&apos;s talk through your goals.
+                </p>
+
+                {/* Primary Action Buttons */}
+                <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-8">
+                  <a
+                    href="https://calendly.com/dineshreddy0906/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="neo-btn bg-black text-white px-7 sm:px-9 py-4 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider gap-2 shadow-[4px_4px_0px_0px_#000] hover:bg-[#1a1a1a] transition-all"
+                  >
+                    <Calendar className="w-4 h-4 text-[#FACC15]" />
+                    <span>BOOK A 30-MIN CALL</span>
+                    <ArrowUpRight className="w-4 h-4 stroke-[3]" />
+                  </a>
+
+                  <a
+                    href="mailto:dineshveerapareddy@gmail.com"
+                    className="neo-btn bg-white text-black px-6 sm:px-8 py-4 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider gap-2 shadow-[3px_3px_0px_0px_#000]"
+                  >
+                    <Mail className="w-4 h-4 text-[#2563EB]" />
+                    <span>EMAIL DIRECTLY</span>
+                  </a>
+                </div>
+
+                {/* Direct Verification Channels */}
+                <div className="flex flex-wrap items-center gap-2">
+                  <a
+                    href="https://drive.google.com/file/d/1q1BJc9afcA2kZVJJsRGza3bbbLQTvWGY/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="neo-badge bg-white text-black px-3.5 py-1.5 rounded-full text-xs font-bold gap-1.5 hover:bg-black hover:text-white transition-colors"
+                  >
+                    📄 View Resume
+                  </a>
+                  <a
+                    href="https://github.com/Dinesh-78"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="neo-badge bg-white text-black px-3.5 py-1.5 rounded-full text-xs font-bold gap-1.5 hover:bg-black hover:text-white transition-colors"
+                  >
+                    🐙 GitHub (@Dinesh-78)
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/dinesh-veerapareddy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="neo-badge bg-white text-black px-3.5 py-1.5 rounded-full text-xs font-bold gap-1.5 hover:bg-black hover:text-white transition-colors"
+                  >
+                    💼 LinkedIn
+                  </a>
+                  <a
+                    href="https://wa.me/918374330906?text=Hi%20Dinesh%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20you"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="neo-badge bg-white text-black px-3.5 py-1.5 rounded-full text-xs font-bold gap-1.5 hover:bg-black hover:text-white transition-colors"
+                  >
+                    💬 WhatsApp Chat
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column: Direct Connect Card Mockup */}
+              <div className="lg:col-span-4 flex justify-center lg:justify-end">
+                <div className="w-full max-w-xs bg-white text-black border-2 border-black rounded-2xl p-6 shadow-[6px_6px_0px_0px_#000] relative transform rotate-1 hover:rotate-0 transition-transform">
+                  <div className="w-12 h-2.5 rounded-full bg-[#EF4444] border border-black mb-4 mx-auto" />
+
+                  <div className="text-center">
+                    <div className="w-14 h-14 rounded-2xl bg-[#EF4444]/10 border-2 border-black text-[#EF4444] mx-auto flex items-center justify-center mb-3">
+                      <Calendar className="w-7 h-7 text-[#2563EB]" />
+                    </div>
+
+                    <h4 className="text-xs font-black uppercase tracking-wider text-black">
+                      DIRECT CALENDAR
+                    </h4>
+                    <p className="text-[11px] font-mono text-muted-foreground mt-1 truncate">
+                      calendly.com/dineshreddy0906
+                    </p>
+
+                    <a
+                      href="https://calendly.com/dineshreddy0906/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="neo-btn bg-[#FACC15] text-black w-full py-3 rounded-xl text-xs font-black uppercase tracking-wider mt-4 shadow-[2px_2px_0px_0px_#000]"
+                    >
+                      OPEN CALENDLY APP ↗
+                    </a>
                   </div>
-                  <span className="text-xs font-semibold text-slate-600 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{method.title}</span>
-                </motion.a>
-              ))}
+                </div>
+              </div>
             </div>
           </motion.div>
-
-          {/* Footer with Copyright */}
-          <motion.footer
-            className="text-center pt-12 border-t border-blue-200/50 dark:border-blue-800/50"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="space-y-3">
-              <p className="font-bold text-slate-900 dark:text-slate-100 text-lg">
-                Dinesh Veerapareddy
-              </p>
-              <div className="flex items-center justify-center gap-4 text-xs text-slate-400 dark:text-slate-500 font-medium">
-                <span>React Native Developer</span>
-                <span>•</span>
-                <span>Next.js Developer</span>
-                <span>•</span>
-                <span>Full Stack Engineer</span>
-                <span>•</span>
-                <span>AWS Certified</span>
-              </div>
-              <p className="text-sm text-slate-500 dark:text-slate-400">
-                © {getCurrentYear()} Dinesh Veerapareddy. All rights reserved.
-              </p>
-              <p className="text-xs text-slate-400 dark:text-slate-500">
-                Built with Next.js · TypeScript · Framer Motion
-              </p>
-            </div>
-          </motion.footer>
         </div>
       </section>
+
+      {/* ── ROYAL BLUE NEO-FOOTER ── */}
+      <footer className="w-full bg-[#1D4ED8] text-white border-t-2 border-black pt-16 pb-12 px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/20">
+            {/* Left Column: Brand & Grounded Bio */}
+            <div className="md:col-span-6 flex flex-col items-start">
+              <span className="text-2xl font-black tracking-tight uppercase flex items-center gap-2 mb-3">
+                DINESH VEERAPAREDDY
+                <span className="w-5 h-5 rounded-full bg-[#FACC15] text-black text-xs flex items-center justify-center font-bold">
+                  ⚡
+                </span>
+              </span>
+
+              <p className="text-xs sm:text-sm text-white/80 max-w-md font-medium leading-relaxed mb-6">
+                AWS Certified Developer & Full-Stack Systems Engineer. Engineering high-throughput healthcare systems at Carelon Global Solutions, and building production-grade mobile & cloud software for select clients.
+              </p>
+
+              <span className="text-xs font-mono text-white/60">
+                © {currentYear} Dinesh Veerapareddy. All rights reserved.
+              </span>
+            </div>
+
+            {/* Quick Links */}
+            <div className="md:col-span-3">
+              <h5 className="text-xs font-black uppercase tracking-wider text-[#FACC15] mb-3">
+                NAVIGATION
+              </h5>
+              <ul className="flex flex-col gap-2 text-xs font-bold text-white/90">
+                <li>
+                  <a href="#about" className="hover:text-[#FACC15] transition-colors">
+                    ABOUT
+                  </a>
+                </li>
+                <li>
+                  <a href="#services" className="hover:text-[#FACC15] transition-colors">
+                    SERVICES
+                  </a>
+                </li>
+                <li>
+                  <a href="#projects" className="hover:text-[#FACC15] transition-colors">
+                    SELECTED WORK
+                  </a>
+                </li>
+                <li>
+                  <a href="#experience" className="hover:text-[#FACC15] transition-colors">
+                    EXPERIENCE
+                  </a>
+                </li>
+                <li>
+                  <a href="#testimonials" className="hover:text-[#FACC15] transition-colors">
+                    OUTCOMES
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="hover:text-[#FACC15] transition-colors">
+                    CONTACT
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Direct Connect */}
+            <div className="md:col-span-3">
+              <h5 className="text-xs font-black uppercase tracking-wider text-[#FACC15] mb-3">
+                LET&apos;S CONNECT
+              </h5>
+              <ul className="flex flex-col gap-2.5 text-xs font-medium text-white/90">
+                <li className="flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 text-[#FACC15]" />
+                  <a
+                    href="mailto:dineshveerapareddy@gmail.com"
+                    className="hover:underline truncate"
+                  >
+                    dineshveerapareddy@gmail.com
+                  </a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-[#FACC15]" />
+                  <a href="tel:+918374330906" className="hover:underline">
+                    +91 8374330906
+                  </a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-[#FACC15]" />
+                  <span>Bengaluru, India </span>
+                </li>
+              </ul>
+
+              {/* Tilted Sticker in Footer */}
+              <div className="mt-6">
+                <span className="neo-sticker bg-white text-black text-[11px] font-black px-3 py-1.5 rounded-lg shadow-[3px_3px_0px_0px_#000] inline-flex items-center gap-1.5 transform -rotate-2">
+                  <span>Engineered for reliability & performance.</span>
+                  <span className="text-[#EF4444]">⚡</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
