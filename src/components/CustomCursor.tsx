@@ -22,13 +22,16 @@ export default function CustomCursor() {
   const smoothY = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    // Check if device has touch capability (coarse pointer)
+    // Check if device has touch capability or is mobile/tablet (<1024px)
     const checkTouch = () => {
-      if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
-        setIsTouchDevice(true);
+      if (typeof window !== "undefined") {
+        const isCoarse = window.matchMedia("(pointer: coarse)").matches;
+        const isSmallScreen = window.innerWidth < 1024;
+        setIsTouchDevice(isCoarse || isSmallScreen);
       }
     };
     checkTouch();
+    window.addEventListener("resize", checkTouch);
 
     let hasEnteredOnce = false;
 
@@ -116,6 +119,7 @@ export default function CustomCursor() {
       if (typeof document !== "undefined") {
         document.documentElement.classList.remove("custom-cursor-active");
       }
+      window.removeEventListener("resize", checkTouch);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);

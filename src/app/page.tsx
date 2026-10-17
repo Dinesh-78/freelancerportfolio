@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#FAF8F5] dark:bg-[#0D0F14] text-foreground font-sans selection:bg-[#FACC15] selection:text-black">
       <Header />
-      <main>
+      <main className="overflow-x-hidden w-full">
         <div id="home">
           <Herosection />
         </div>

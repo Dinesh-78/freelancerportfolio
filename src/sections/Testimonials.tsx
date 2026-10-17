@@ -45,29 +45,29 @@ const outcomes = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+    <section id="testimonials" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         {/* Container Box */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-[#EF4444] text-white border-2.5 border-black rounded-3xl p-6 sm:p-10 shadow-[8px_8px_0px_0px_#000] relative"
+          transition={{ duration: 0.5 }}
+          className="bg-[#EF4444] text-white border-2 sm:border-2.5 border-black dark:border-slate-700 rounded-3xl p-6 sm:p-10 shadow-[5px_5px_0px_0px_#000] sm:shadow-[8px_8px_0px_0px_#000] relative"
         >
           {/* Header Bar inside Red Box */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-white/20 pb-6 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-white/20 pb-5 sm:pb-6 mb-6 sm:mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="neo-sticker bg-[#FACC15] text-black text-[10px] font-black px-2.5 py-0.5 rounded uppercase">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="neo-sticker bg-[#FACC15] text-black text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded uppercase shadow-[1.5px_1.5px_0px_0px_#000]">
                   VERIFIABLE TRACK RECORD
                 </span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight uppercase">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight uppercase">
                 PROVEN DELIVERABLES & OUTCOMES
               </h2>
-              <p className="text-xs sm:text-sm text-white/85 font-medium mt-1">
-                Real apps in the hands of real users — no fabricated client quotes or unverified claims.
+              <p className="text-xs sm:text-sm text-white/90 font-medium mt-1">
+                Real apps in the hands of real users — verifiable production software
               </p>
             </div>
 
@@ -75,7 +75,7 @@ export default function Testimonials() {
               href="https://github.com/Dinesh-78"
               target="_blank"
               rel="noopener noreferrer"
-              className="neo-btn bg-white text-black px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider gap-1.5 self-start sm:self-auto shadow-[3px_3px_0px_0px_#000]"
+              className="neo-btn bg-white text-black px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider inline-flex items-center justify-center gap-1.5 self-start sm:self-auto shadow-[2px_2px_0px_0px_#000] sm:shadow-[3px_3px_0px_0px_#000] shrink-0 whitespace-nowrap"
             >
               <span>INSPECT CODE ON GITHUB</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -83,22 +83,22 @@ export default function Testimonials() {
           </div>
 
           {/* 3 Outcome Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
             {outcomes.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <motion.div
                   key={idx}
-                  whileHover={{ y: -4 }}
-                  className="bg-white text-black border-2 border-black rounded-2xl p-6 shadow-[5px_5px_0px_0px_#000] flex flex-col justify-between"
+                  whileHover={{ y: -3 }}
+                  className="bg-card text-card-foreground border-2 border-black rounded-2xl p-5 sm:p-6 shadow-[3px_3px_0px_0px_#000] sm:shadow-[5px_5px_0px_0px_#000] flex flex-col justify-between h-full"
                 >
                   <div>
                     {/* Top Category Badge */}
-                    <div className="flex items-center justify-between gap-2 mb-4">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground">
+                    <div className="flex items-center justify-between gap-2 mb-3.5">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground truncate">
                         {item.category}
                       </span>
-                      <span className="neo-badge bg-[#10B981]/15 text-[#059669] border-[#10B981] px-2 py-0.5 rounded text-[10px] font-bold flex items-center gap-1">
+                      <span className="neo-badge bg-[#10B981]/15 text-[#059669] dark:text-[#34D399] border-[#10B981] px-2 py-0.5 rounded text-[10px] font-bold inline-flex items-center gap-1 shrink-0">
                         <CheckCircle2 className="w-3 h-3" />
                         {item.metricBadge}
                       </span>
@@ -112,23 +112,23 @@ export default function Testimonials() {
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-black tracking-tight uppercase text-black leading-snug">
+                        <h3 className="text-base sm:text-lg font-black tracking-tight uppercase leading-snug">
                           {item.title}
                         </h3>
                       </div>
                     </div>
 
                     {/* Summary */}
-                    <p className="text-xs sm:text-[13px] font-medium leading-relaxed mb-4 text-black/85">
+                    <p className="text-xs sm:text-[13px] font-medium leading-relaxed mb-4 text-foreground/85">
                       {item.summary}
                     </p>
 
                     {/* Tech Badges */}
-                    <div className="flex flex-wrap gap-1.5 mb-6">
+                    <div className="flex flex-wrap gap-1.5 mb-5">
                       {item.techStack.map((tech, tIdx) => (
                         <span
                           key={tIdx}
-                          className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-secondary text-foreground/80 border border-black/20"
+                          className="neo-badge text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-card text-foreground/80 border border-black/30"
                         >
                           {tech}
                         </span>
@@ -137,15 +137,15 @@ export default function Testimonials() {
                   </div>
 
                   {/* Verification Link */}
-                  <div className="pt-4 border-t border-black/10 flex items-center justify-between">
-                    <span className="text-[11px] font-mono font-bold text-muted-foreground uppercase">
+                  <div className="pt-3.5 border-t border-black/10 dark:border-slate-800 flex items-center justify-between">
+                    <span className="text-[10px] sm:text-[11px] font-mono font-bold text-muted-foreground uppercase">
                       Proof of Delivery:
                     </span>
                     <a
                       href={item.verificationLink}
                       target={item.verificationLink.startsWith("http") ? "_blank" : undefined}
                       rel={item.verificationLink.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="text-xs font-black uppercase text-[#2563EB] hover:underline flex items-center gap-1"
+                      className="text-xs font-black uppercase text-[#2563EB] dark:text-[#60A5FA] hover:underline inline-flex items-center gap-1 whitespace-nowrap"
                     >
                       <span>{item.linkText}</span>
                     </a>
