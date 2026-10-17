@@ -142,9 +142,6 @@ export default function Contact() {
             <div className="md:col-span-6 flex flex-col items-start">
               <span className="text-xl sm:text-2xl font-black tracking-tight uppercase flex items-center gap-2 mb-3">
                 <span>DINESH VEERAPAREDDY</span>
-                <span className="w-5 h-5 rounded-full bg-[#FACC15] text-black text-xs flex items-center justify-center font-bold">
-                  ⚡
-                </span>
               </span>
 
               <p className="text-xs sm:text-sm text-white/85 max-w-md font-medium leading-relaxed mb-5">
