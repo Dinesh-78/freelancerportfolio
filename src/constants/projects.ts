@@ -49,29 +49,6 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
-    title: "Myotrek Fitness App",
-    icon: Activity,
-    tech: [
-      "React Native",
-      "Bluetooth BLE",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-    ],
-    desc: "A mobile fitness application that connects seamlessly with Bluetooth BLE devices to monitor reps, workout performance, and exercise metrics in real-time. Built for performance athletes and gym coaches with 100+ active users.",
-    type: "Mobile App",
-    deliveryTime: "4 weeks",
-    metrics: {
-      users: "100+ users",
-    },
-    testimonial:
-      '"Seamless Bluetooth integration and real-time exercise tracking makes workout management effortless."',
-    client: "Myotrek",
-    demoUrl:
-      "https://play.google.com/store/apps/details?id=com.myotrek.fitness",
-    caseStudyUrl: "#",
-  },
-  {
     title: "Truck Management System",
     icon: Truck,
     tech: ["React", "TypeScript", "Tailwind CSS", "Node.js"],

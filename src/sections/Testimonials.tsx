@@ -18,18 +18,6 @@ const outcomes = [
     linkText: "Google Play Store ↗",
   },
   {
-    title: "Myotrek Fitness App",
-    category: "BLUETOOTH BLE HARDWARE",
-    icon: Activity,
-    iconBg: "bg-[#10B981] text-white",
-    summary:
-      "Engineered real-time Bluetooth Low Energy (BLE) peripheral sync for fitness athletes. Streams sensor workout reps, sets, and velocity metrics with zero connection dropouts during workouts.",
-    metricBadge: "Verified Hardware Sync",
-    techStack: ["React Native", "Bluetooth BLE", "TypeScript", "Node.js"],
-    verificationLink: "https://play.google.com/store/apps/details?id=com.myotrek.fitness",
-    linkText: "Google Play Store ↗",
-  },
-  {
     title: "Enterprise Healthcare Claims",
     category: "CARELON GLOBAL SOLUTIONS",
     icon: Building2,
