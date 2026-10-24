@@ -145,7 +145,7 @@ export default function Contact() {
               </span>
 
               <p className="text-xs sm:text-sm text-white/85 max-w-md font-medium leading-relaxed mb-5">
-                AWS Certified Developer & Full-Stack Systems Engineer. Engineering high-throughput healthcare systems at Carelon Global Solutions, and building production-grade mobile & cloud software for select clients.
+                AWS Certified Developer & Full-Stack Systems Engineer. Engineering high-throughput FinTech systems at Prajwal Fintech, and building production-grade mobile & cloud software for select clients.
               </p>
 
               <span className="text-xs font-mono text-white/60">

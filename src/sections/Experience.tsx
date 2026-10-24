@@ -27,7 +27,7 @@ export default function Experience() {
 
           <div className="self-start sm:self-auto">
             <span className="neo-badge bg-[#10B981]/15 text-[#059669] dark:text-[#34D399] border-[#10B981] text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-[1.5px_1.5px_0px_0px_#000]">
-              ● Currently Engineering at Carelon Global Solutions
+              ● Currently Engineering at Prajwal Fintech
             </span>
           </div>
         </div>

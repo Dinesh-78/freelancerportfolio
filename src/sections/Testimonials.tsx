@@ -17,18 +17,18 @@ const outcomes = [
     verificationLink: "https://play.google.com/store/apps/details?id=com.vittup",
     linkText: "Google Play Store ↗",
   },
-  {
-    title: "Enterprise Healthcare Claims",
-    category: "CARELON GLOBAL SOLUTIONS",
-    icon: Building2,
-    iconBg: "bg-[#2563EB] text-white",
-    summary:
-      "Engineered robust Java / Spring Boot microservices and automated claims processing pipelines with AWS CloudWatch observability. Maintained platform reliability for millions of health plan members.",
-    metricBadge: "Enterprise SLA Grade",
-    techStack: ["Spring Boot", "AWS CloudWatch", "PostgreSQL", "Docker"],
-    verificationLink: "#experience",
-    linkText: "View Track Record ↗",
-  },
+  // {
+  //   title: "Enterprise Healthcare Claims",
+  //   category: "CARELON GLOBAL SOLUTIONS",
+  //   icon: Building2,
+  //   iconBg: "bg-[#2563EB] text-white",
+  //   summary:
+  //     "Engineered robust Java / Spring Boot microservices and automated claims processing pipelines with AWS CloudWatch observability. Maintained platform reliability for millions of health plan members.",
+  //   metricBadge: "Enterprise SLA Grade",
+  //   techStack: ["Spring Boot", "AWS CloudWatch", "PostgreSQL", "Docker"],
+  //   verificationLink: "#experience",
+  //   linkText: "View Track Record ↗",
+  // },
 ];
 
 export default function Testimonials() {

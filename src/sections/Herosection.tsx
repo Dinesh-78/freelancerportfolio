@@ -54,8 +54,8 @@ const Herosection: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-sm sm:text-base lg:text-lg text-foreground/80 font-medium leading-relaxed max-w-2xl mb-6 sm:mb-8"
             >
-              Enterprise Full-Stack Engineer & AWS Certified Developer. Currently engineering healthcare data systems at{" "}
-              <span className="highlight-yellow font-bold text-foreground">Carelon Global Solutions</span> and building production-ready mobile apps and cloud architectures for select clients.
+              Enterprise Full-Stack Engineer & AWS Certified Developer. Currently engineering  systems at{" "}
+              <span className="highlight-yellow font-bold text-foreground">Prajwal Fintech</span> and building production-ready mobile apps and cloud architectures for select clients.
             </motion.p>
 
             {/* CTA Buttons & Proof Links */}
@@ -266,7 +266,7 @@ const Herosection: React.FC = () => {
               </h2>
 
               <p className="text-xs sm:text-sm lg:text-base text-white/95 font-medium leading-relaxed mb-3 sm:mb-4">
-                I&apos;m an <strong className="text-[#FACC15]">AWS Certified Developer & Full-Stack Engineer</strong> currently building mission-critical healthcare systems at Carelon Global Solutions, alongside crafting production mobile apps and client SaaS platforms.
+                I&apos;m an <strong className="text-[#FACC15]">AWS Certified Developer & Full-Stack Engineer</strong> currently building mission-critical FinTech systems at Prajwal Fintech, alongside crafting production mobile apps and client SaaS platforms.
               </p>
 
               <p className="text-xs sm:text-sm text-white/85 leading-relaxed mb-6 sm:mb-8">
@@ -328,7 +328,7 @@ const Herosection: React.FC = () => {
 
                 <div className="mt-4 pt-3 border-t border-black/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
                   <span className="text-[11px] font-mono text-muted-foreground">
-                    Carelon + Independent Client Work
+                    Prajwal Fintech + Independent Client Work
                   </span>
                   <span className="text-xs font-bold text-[#2563EB]">
                     Crafted for production

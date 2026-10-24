@@ -11,36 +11,36 @@ export interface Experience {
 }
 
 export const experiences: Experience[] = [
-  {
-    title: "Associate Software Engineer I",
-    company: "Carelon Global Solutions India",
-    location: "Bengaluru, Karnataka · Hybrid",
-    period: "Feb 2026 – Present",
-    icon: HeartPulse,
-    achievements: [
-      "Owned end-to-end development of the Benefits & Insurance module for a large-scale healthcare platform using Java, Spring Boot, and Angular.",
-      "Designed and developed scalable REST APIs and microservices supporting insurance eligibility, claims, and member benefits workflows.",
-      "Integrated SQL and NoSQL databases to efficiently manage structured member records and high-volume healthcare data.",
-      "Improved API response times by 20–30% through database indexing, query optimization, and eliminating redundant service calls.",
-      "Monitored production services using AWS CloudWatch and resolved performance bottlenecks to improve platform reliability.",
-      "Built comprehensive unit and integration tests, reducing regressions and maintaining high code quality across releases.",
-      "Collaborated with cross-functional Agile teams of 10+ engineers, QA, and product managers throughout sprint planning and feature delivery."
-    ],
-    technologies: [
-      "Java",
-      "Spring Boot",
-      "Angular",
-      "Microservices",
-      "REST APIs",
-      "AWS",
-      "SQL",
-      "NoSQL",
-      "JUnit",
-      "Git",
-      "Agile",
-      "Maven"
-    ]
-  },
+  // {
+  //   title: "Associate Software Engineer I",
+  //   company: "Carelon Global Solutions India",
+  //   location: "Bengaluru, Karnataka · Hybrid",
+  //   period: "Feb 2026 – Present",
+  //   icon: HeartPulse,
+  //   achievements: [
+  //     "Owned end-to-end development of the Benefits & Insurance module for a large-scale healthcare platform using Java, Spring Boot, and Angular.",
+  //     "Designed and developed scalable REST APIs and microservices supporting insurance eligibility, claims, and member benefits workflows.",
+  //     "Integrated SQL and NoSQL databases to efficiently manage structured member records and high-volume healthcare data.",
+  //     "Improved API response times by 20–30% through database indexing, query optimization, and eliminating redundant service calls.",
+  //     "Monitored production services using AWS CloudWatch and resolved performance bottlenecks to improve platform reliability.",
+  //     "Built comprehensive unit and integration tests, reducing regressions and maintaining high code quality across releases.",
+  //     "Collaborated with cross-functional Agile teams of 10+ engineers, QA, and product managers throughout sprint planning and feature delivery."
+  //   ],
+  //   technologies: [
+  //     "Java",
+  //     "Spring Boot",
+  //     "Angular",
+  //     "Microservices",
+  //     "REST APIs",
+  //     "AWS",
+  //     "SQL",
+  //     "NoSQL",
+  //     "JUnit",
+  //     "Git",
+  //     "Agile",
+  //     "Maven"
+  //   ]
+  // },
   {
     title: "Full Stack Developer",
     company: "Freelancer",
